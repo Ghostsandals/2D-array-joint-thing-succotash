@@ -15,7 +15,11 @@ public class Array2DExercises {
 	
 	// return the total of the values in the specified row.
 	public static int getRowTotal(int[][] a, int row) {
-		return -1;
+		int n = 0;
+		for (int i = 0; i < a.length; i++){
+			n = n + a[row][i];
+		}
+		return n;
 	}
 	
 	// return the total of the values in the specified column.
