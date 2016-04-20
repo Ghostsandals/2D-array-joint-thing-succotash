@@ -80,7 +80,17 @@ public class Array2DExercises {
 	
 	// return the diagonal sum, top left to bottom right
 	public static int getTopLeftToBottomRightDiagonalSum(int[][] a) {
-		return -1;
+		int r = 0;
+		int c = 0;
+		int s = 0;
+		do{
+			s += a[r][c]; 
+			r++;
+			c++;
+		}while(r < a.length && c < a[0].length);
+		
+		
+		return s;
 	}
 	
 	// return true if the array is sorted low to high
