@@ -5,12 +5,36 @@ public class Array2DExercises {
 
 	// return the total of all the values in the array.
 	public static int getTotal(int[][] a) {
-		return -1;
+		int t = 0;
+		int counter_c = 0;
+		int counter_r = 0;
+		do{
+			for(counter_c = 0;counter_c < a[counter_r].length;counter_c++){
+				t += a[counter_r][counter_c];
+			}
+			
+			counter_r++;
+		}while(counter_r < a.length);
+		
+		return t;
 	}
 	
 	// return the average of all the values in the array.
 	public static double getAverage(int[][] a) {
-		return -1;
+		int t = 0;
+		int b = 0;
+		int counter_c = 0;
+		int counter_r = 0;
+		do{
+			for(counter_c = 0;counter_c < a[counter_r].length;counter_c++){
+				t += a[counter_r][counter_c];
+				b++;
+			}
+			
+			counter_r++;
+		}while(counter_r < a.length);
+		double x = (double)t/(double)b;
+		return x;
 	}
 	
 	// return the total of the values in the specified row.
@@ -49,7 +73,7 @@ public class Array2DExercises {
 	
 	// return the lowest value in the specified row of the array.
 	public static int getLowestInRow(int[][] a, int row) {
-		int n = 1000;
+		int n = (int) (Math.pow(2, 32) - 1);
 		int i = 0;
 		do{
 			if (a[row][i] < n){
@@ -65,12 +89,38 @@ public class Array2DExercises {
 	
 	// return the lowest value in the specified column of the array
 	public static int getHighestInColumn(int[][] a, int column) {
-		return -1;
+		int n = 0;
+		int i = 0;
+		do{
+			if (a[i][column] > n){
+				n = a[i][column];
+			}
+			else{
+				n = n;
+			}
+			
+			i ++;
+		}while( i < a.length);
+		
+		return n;
 	}
 	
 	// return the highest value in the specified column of the array
 	public static int getLowestInColumn(int[][] a, int column) {
-		return -1;
+		int n = (int) (Math.pow(2, 32) - 1);
+		int i = 0;
+		do{
+			if (a[i][column] < n){
+				n = a[i][column];
+			}
+			else{
+				n = n;
+			}
+			
+			i ++;
+		}while( i < a.length);
+
+		return n;
 	}
 	
 	// return the diagonal sum, bottom left to top right
@@ -105,7 +155,23 @@ public class Array2DExercises {
 	
 	// return true if the array is sorted low to high
 	public static boolean isArraySorted(int[][] a) {
-		return false;
+		int comp = a[0][0];
+		boolean answer = true;
+		int r = 0;
+		int c = 1;
+		while(answer){
+			for(c=1;c < a[r].length;c++){
+				if (a[r][c] < comp){
+					answer = false;
+				}
+				else{
+					answer = true;
+				}
+			}
+			r++;
+		}
+
+		return answer;
 	}
 	
 	// return true if array is sorted high to low
@@ -115,17 +181,50 @@ public class Array2DExercises {
 	
 	// return true if array is jagged
 	public static boolean isJaggedArray(int[][] a) {
-		return false;
+		int rlength = a[0].length;
+		boolean answer = false;
+		for (int i = 1;i < a.length;i++){
+			if(a[i].length == rlength){
+				answer = false;
+			}
+		else{
+			answer = true;
+		}
+		}
+		
+		
+		return answer;
+		
 	}
+	
 	
 	// return true if array is square (n x n)
 	public static boolean isSquareArray(int[][] a) {
+		if(a.length == a[0].length){
+			return true;
+		}
+
+	else{
 		return false;
+	}
 	}
 	
 	// return true if array is rectangular (n x m)
 	public static boolean isRectangularArray(int[][] a) {
-		return false;
+		int rlength = a[0].length;
+		boolean answer = false;
+		for (int i = 1;i < a.length;i++){
+			if(a[i].length == rlength){
+				answer = true;
+			}
+		else{
+			answer = false;
+		}
+		}
+		
+		
+		return answer;
+		
 	}
 }
 
