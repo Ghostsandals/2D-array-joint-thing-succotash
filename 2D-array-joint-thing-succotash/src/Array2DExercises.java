@@ -75,7 +75,17 @@ public class Array2DExercises {
 	
 	// return the diagonal sum, bottom left to top right
 	public static int getBottomLeftToTopRightDiagonalSum(int[][] a) {
-		return -1;
+		int r = a.length - 1;
+		int c = 0;
+		int s = 0;
+		do{
+			s += a[r][c]; 
+			r--;
+			c++;
+		}while(r >= 0 && c < a[0].length);
+		
+		
+		return s;
 	}
 	
 	// return the diagonal sum, top left to bottom right
