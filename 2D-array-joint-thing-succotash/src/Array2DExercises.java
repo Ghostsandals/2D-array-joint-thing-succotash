@@ -155,13 +155,14 @@ public class Array2DExercises {
 		boolean answer = true;
 		int r = 0;
 		int c = 1;
-		while(answer){
-			for(c=1;c < a[r].length;c++){
-				if (a[r][c] < comp){
-					answer = false;
+		while(answer && r < a.length){
+			for(c=1;c < a[r].length - 1;c++){
+				if (a[r][c] > comp){
+					answer = true;
+					comp = a[r][c];
 				}
 				else{
-					answer = true;
+					answer = false;
 				}
 			}
 			r++;
@@ -172,8 +173,25 @@ public class Array2DExercises {
 	
 	// return true if array is sorted high to low
 	public static boolean isArrayReversed(int[][] a) {
-		return false;
+		int comp = a[0][0];
+		boolean answer = true;
+		int r = 0;
+		int c = 1;
+		while(answer && r < a.length - 1){
+			for(c=1;c < a[r].length - 1;c++){
+				if (a[r][c] < comp){
+					answer = true;
+				}
+				else{
+					answer = false;
+				}
+			}
+			r++;
+		}
+
+		return answer;
 	}
+	
 	
 	// return true if array is jagged
 	public static boolean isJaggedArray(int[][] a) {
