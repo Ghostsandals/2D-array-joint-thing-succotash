@@ -5,7 +5,6 @@ public class Array2DExercises {
 
 	// return the total of all the values in the array.
 	public static int getTotal(int[][] a) {
-<<<<<<< HEAD
 		int sum =0;
 		for (int i = 0; i < a.length; i++) {
 			for(int j =0; j < a[i].length; j++) {
@@ -13,20 +12,7 @@ public class Array2DExercises {
 			}
 		}
 		return sum;
-=======
-		int t = 0;
-		int counter_c = 0;
-		int counter_r = 0;
-		do{
-			for(counter_c = 0;counter_c < a[counter_r].length;counter_c++){
-				t += a[counter_r][counter_c];
-			}
-			
-			counter_r++;
-		}while(counter_r < a.length);
-		
-		return t;
->>>>>>> 95ee12e4463558cf9574ccc2defb44a5627f4226
+
 	}
 	
 	// return the average of all the values in the array.
