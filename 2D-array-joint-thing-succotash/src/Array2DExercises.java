@@ -190,7 +190,7 @@ public class Array2DExercises {
 			r++;
 		}
 
-		return answer;//test
+		return answer;
 				
 	}
 	
